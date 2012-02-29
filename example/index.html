@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<script src="live.js"></script>
+		<style>
+			.container { 
+				display: inline-block;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="jquery.js"></script>
+		<script src="../lib/cropd.js"></script>
+		<div>
+			<img src="http://placekitten.com/400/400"/>
+			<div class="container">
+				<img src="http://placekitten.com/400/400"/>
+			</div>
+		</div>
+		<div>
+			<img src="http://placekitten.com/400/200"/>
+			<div class="container">
+				<img src="http://placekitten.com/400/200"/>
+			</div>
+		</div>
+		<div>
+			<img src="http://placekitten.com/200/300"/>
+			<div class="container">
+				<img src="http://placekitten.com/200/300"/>
+			</div>
+		</div>
+		<div>
+			<img src="http://placekitten.com/200/100"/>
+			<div class="container">
+				<img src="http://placekitten.com/200/100"/>
+			</div>
+		</div>
+		<script>
+			$('.container').cropd({
+				maxWidth: 300,
+				maxHeight: 250
+			});
+		</script>
+	</body>
+</html>
