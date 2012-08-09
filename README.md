@@ -5,8 +5,8 @@ jQuery Fit is a plugin that will center and crop your images to fit perfectly in
 ##Download
 
 - [Source](http://github.com/jgallen23/fit)
-- [Development]()
-- [Production]()
+- [Development](https://raw.github.com/jgallen23/fit/master/dist/jquery.fit.js)
+- [Production](https://raw.github.com/jgallen23/fit/master/dist/jquery.fit.min.js)
 
 ##Usage
 
