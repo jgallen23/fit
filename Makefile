@@ -1,8 +1,7 @@
-run:
-	./node_modules/.bin/smoosh make build.json
+build:
+	./node_modules/.bin/masher mash.yaml
 
 install:
-	npm install smoosh
-	npm install markx
+	npm install masher
 
-.PHONY: preview-site
+.PHONY: build install
