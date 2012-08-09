@@ -18,7 +18,8 @@ $('.resize img').fit();
 
 ```js
 $('.resize img').fit({
-	resizeParent: true //will resize the container to fit the resized image's aspect ratio
+	resizeParent: true, //will resize the container to fit the resized image's aspect ratio [default: false]
+	resize: true //will make sure that the entire photo is visible.  Resizes to fit the container and maintains aspect ratio [default: true]
 });
 ```
 

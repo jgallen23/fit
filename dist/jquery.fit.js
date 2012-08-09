@@ -18,23 +18,40 @@
       var w = img.width();
       var h = img.height();
 
-      var newWidth = parent.width();
-      var newHeight = parent.height();
+      var containerWidth = parent.width();
+      var containerHeight = parent.height();
 
       var offsetX = 0;
       var offsetY = 0;
 
-      
-      if (options.resizeParent && newWidth > w) {
-        newWidth = w;
-      } else {
-        offsetX = (newWidth - w) / 2;
+      if (options.resize) {
+        var ratio = w / h;
+        var newWidth = 0;
+        var newHeight = 0;
+
+        if (ratio > 1) {
+          h = containerWidth * h / w;
+          w = containerWidth;
+        } else {
+          w = containerHeight * w / h;
+          h = containerHeight;
+        }
+        img.css({
+          width: w,
+          height: h
+        });
       }
 
-      if (options.resizeParent && newHeight > h) {
-        newHeight = h;
+      if (options.resizeParent && containerWidth > w) {
+        containerWidth = w;
       } else {
-        offsetY = (newHeight - h) / 2;
+        offsetX = (containerWidth - w) / 2;
+      }
+
+      if (options.resizeParent && containerHeight > h) {
+        containerHeight = h;
+      } else {
+        offsetY = (containerHeight - h) / 2;
       }
 
       img.css({
@@ -48,8 +65,8 @@
       });
       if (options.resizeParent) {
         parent.css({
-          width: newWidth,
-          height: newHeight
+          width: containerWidth,
+          height: containerHeight
         });
       }
       img.trigger('fit');
@@ -73,7 +90,8 @@
   };
 
   $.fn.fit.defaults = {
-    resizeParent: false
+    resizeParent: false,
+    resize: false
   };
 
 })(window.jQuery || window.Zepto);
