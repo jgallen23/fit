@@ -1,4 +1,12 @@
 
+0.3.0 / 2013-01-17 
+==================
+
+  * [dist] renamed jquery.fit to fit
+  * [example] updated to use dummy images
+  * [tools] grunt watch example folder
+  * [tools] grunt and bower integration
+
 0.2.0 / 2012-08-09 
 ==================
 

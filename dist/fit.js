@@ -1,6 +1,6 @@
 /*!
  * fit - A plugin to fit images inside a container
- * v0.2.0
+ * v0.3.0
  * https://github.com/jgallen23/fit
  * copyright Greg Allen 2013
  * MIT License
