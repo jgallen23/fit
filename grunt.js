@@ -32,7 +32,10 @@ module.exports = function(grunt) {
     },
     watch: {
       main: {
-        files: '<config:lint.main>',
+        files: [
+          '<config:lint.main>',
+          'example/*'
+        ],
         tasks: 'default' 
       },
       ci: {
