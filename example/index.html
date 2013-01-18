@@ -1,84 +1,69 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title></title>
-		<script src="live.js"></script>
-		<style>
+  <head>
+    <title>Fit Example</title>
+    <style>
       table { 
+        width: 100%;
         border-collapse: collapse;
+      }
+      th {
+        text-align: left;
       }
       td {
         border: 1px solid #ccc;
-        vertical-align: top;
+        vertical-align: center;
       }
       div {
         width: 200px;
         height: 200px;
         border: 1px solid #333;
+        background: #f0f0f0;
       }
-		</style>
-	</head>
-	<body>
+    </style>
+  </head>
+  <body>
     <table>
       <thead>
         <tr>
-          <th>Before</th>
+          <th>Scenario</th>
+          <th>Original</th>
           <th>No Resize Parent (crop)</th>
-          <th>Resize Parent (crop)</th>
-          <th>Resize image</th>
+          <th>Scale image</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><img src="http://placekitten.com/500/100"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/500/100"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/500/100"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/500/100"/></div></td>
+          <td>Taller than container</td>
+          <td><img src="images/400x150.png"/></td>
+          <td><div class="resize"><img src="images/400x150.png"/></div></td>
+          <td><div class="resize2"><img src="images/400x150.png"/></div></td>
         </tr>
         <tr>
-          <td><img src="http://placekitten.com/500/500"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/500/500"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/500/500"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/500/500"/></div></td>
+          <td>Wider than container</td>
+          <td><img src="images/150x400.png"/></td>
+          <td><div class="resize"><img src="images/150x400.png"/></div></td>
+          <td><div class="resize2"><img src="images/150x400.png"/></div></td>
         </tr>
         <tr>
-          <td><img src="http://placekitten.com/400/200"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/400/200"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/400/200"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/400/200"/></div></td>
+          <td>Larger (both ways) than container</td>
+          <td><img src="images/400x400.png"/></td>
+          <td><div class="resize"><img src="images/400x400.png"/></div></td>
+          <td><div class="resize2"><img src="images/400x400.png"/></div></td>
         </tr>
         <tr>
-          <td><img src="http://placekitten.com/200/250"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/200/250"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/200/250"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/200/250"/></div></td>
-        </tr>
-        <tr>
-          <td><img src="http://placekitten.com/200/100"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/200/100"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/200/100"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/200/100"/></div></td>
-        </tr>
-        <tr>
-          <td><img src="http://placekitten.com/100/50"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/100/50"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/100/50"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/100/50"/></div></td>
-        </tr>
-        <tr>
-          <td><img src="http://placekitten.com/50/150"/></td>
-          <td><div class="resize"><img src="http://placekitten.com/50/150"/></div></td>
-          <td><div class="resize2"><img src="http://placekitten.com/50/150"/></div></td>
-          <td><div class="resize3"><img src="http://placekitten.com/50/150"/></div></td>
+          <td>Smaller (both ways) than container</td>
+          <td><img src="images/100x100.png"/></td>
+          <td><div class="resize"><img src="images/100x100.png"/></div></td>
+          <td><div class="resize2"><img src="images/100x100.png"/></div></td>
         </tr>
       </tbody>
     </table>
-		<script src="jquery.js"></script>
-		<script src="../lib/fit.js"></script>
-		<script>
+    <script src="../components/jquery/jquery.js"></script>
+    <script src="../dist/fit.js"></script>
+    <script>
       $('.resize img').fit();
-      $('.resize2 img').fit({ resizeParent: true });
-      $('.resize3 img').fit({ resize: true });
+      $('.resize2 img').fit({ resize: true });
       $('img')
         .on('fit', function() {
           console.log('fit', arguments);
@@ -86,6 +71,6 @@
         .on('end', function() {
           console.log('end', arguments);
         });
-		</script>
-	</body>
+    </script>
+  </body>
 </html>
