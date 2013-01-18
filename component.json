@@ -1,0 +1,11 @@
+{
+  "name": "fit",
+  "description": "A plugin to fit images inside a container",
+  "version": "0.2.0",
+  "homepage": "https://github.com/jgallen23/fit",
+  "license": "MIT",
+  "copyright": "Greg Allen",
+  "dependencies": {
+    "jquery": "~1.8.3"
+  }
+}
