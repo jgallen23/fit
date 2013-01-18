@@ -1,6 +1,6 @@
 /*!
  * fit - A plugin to fit images inside a container
- * v0.3.0
+ * v0.3.1
  * https://github.com/jgallen23/fit
  * copyright Greg Allen 2013
  * MIT License
@@ -83,9 +83,13 @@
         overflow: 'hidden',
         visibility: 'hidden'
       });
-      el.bind('load', function() {
+      if (el[0].complete || el[0].readyState == 4) {
         centerImage(el, parent);
-      });
+      } else {
+        el.bind('load', function() {
+          centerImage(el, parent);
+        });
+      }
     });
   };
 

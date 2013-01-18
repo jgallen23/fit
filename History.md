@@ -1,4 +1,11 @@
 
+0.3.1 / 2013-01-18 
+==================
+
+  * [example] added css to remove flicker
+  * [lib] fixed if image came from cache
+  * [example] removed unused files
+
 0.3.0 / 2013-01-17 
 ==================
 
