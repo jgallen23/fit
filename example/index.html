@@ -32,6 +32,7 @@
           <th>Original</th>
           <th>No Resize Parent (crop)</th>
           <th>Scale image</th>
+          <th>Align image top, left</th>
         </tr>
       </thead>
       <tbody>
@@ -40,24 +41,28 @@
           <td><img src="images/400x150.png"/></td>
           <td><div class="resize"><img src="images/400x150.png"/></div></td>
           <td><div class="resize2"><img src="images/400x150.png"/></div></td>
+          <td><div class="resize3"><img src="images/400x150.png"/></div></td>
         </tr>
         <tr>
           <td>Wider than container</td>
           <td><img src="images/150x400.png"/></td>
           <td><div class="resize"><img src="images/150x400.png"/></div></td>
           <td><div class="resize2"><img src="images/150x400.png"/></div></td>
+          <td><div class="resize3"><img src="images/150x400.png"/></div></td>
         </tr>
         <tr>
           <td>Larger (both ways) than container</td>
           <td><img src="images/400x400.png"/></td>
           <td><div class="resize"><img src="images/400x400.png"/></div></td>
           <td><div class="resize2"><img src="images/400x400.png"/></div></td>
+          <td><div class="resize3"><img src="images/400x400.png"/></div></td>
         </tr>
         <tr>
           <td>Smaller (both ways) than container</td>
           <td><img src="images/100x100.png"/></td>
           <td><div class="resize"><img src="images/100x100.png"/></div></td>
           <td><div class="resize2"><img src="images/100x100.png"/></div></td>
+          <td><div class="resize3"><img src="images/100x100.png"/></div></td>
         </tr>
       </tbody>
     </table>
@@ -66,6 +71,7 @@
     <script>
       $('.resize img').fit();
       $('.resize2 img').fit({ resize: true });
+      $('.resize3 img').fit({ valign: 'top', halign: 'left' });
       $('img')
         .on('fit', function() {
           console.log('fit', arguments);
