@@ -1,6 +1,6 @@
 /*!
  * fit - A plugin to fit images inside a container
- * v0.3.1
+ * v0.3.2
  * https://github.com/jgallen23/fit
  * copyright Greg Allen 2013
  * MIT License
@@ -44,13 +44,13 @@
 
       if (options.resizeParent && containerWidth > w) {
         containerWidth = w;
-      } else {
+      } else if (options.halign == 'center') {
         offsetX = (containerWidth - w) / 2;
       }
 
       if (options.resizeParent && containerHeight > h) {
         containerHeight = h;
-      } else {
+      } else if (options.valign == 'center') {
         offsetY = (containerHeight - h) / 2;
       }
 
@@ -95,7 +95,9 @@
 
   $.fn.fit.defaults = {
     resizeParent: false,
-    resize: false
+    resize: false,
+    valign: 'center',
+    halign: 'center'
   };
 
 })(window.jQuery || window.Zepto);

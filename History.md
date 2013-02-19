@@ -1,4 +1,10 @@
 
+0.3.2 / 2013-02-18 
+==================
+
+  * [example] example for alignment
+  * [lib] add support for top/left alignment
+
 0.3.1 / 2013-01-18 
 ==================
 
