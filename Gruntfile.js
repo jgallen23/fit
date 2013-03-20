@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     watch: {
       main: {
         files: [
-          '<%= jshint.main>',
+          '<%= jshint.main %>',
           'example/*'
         ],
         tasks: 'default' 
